@@ -8,11 +8,16 @@ const timeCount = Array(Math.max(...times.flat())).fill(0);
 let totalCost = 0;
 
 function solution() {
+  console.log(times);
+  console.log(timeCount);
+
   times.forEach(([start, end]) => {
     for (let i = start; i < end; i++) {
       timeCount[i - 1] += 1;
     }
   });
+  
+  console.log(timeCount);
 
   timeCount.forEach((count, index) => {
     if (count > 0) {
